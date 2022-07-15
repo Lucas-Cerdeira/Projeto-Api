@@ -1,18 +1,15 @@
-from typing import Union
 
 from fastapi import FastAPI
 
 from pydantic import BaseModel
 
-from defs import valida_id
 
-ids = set()
 
 
 class Usuario(BaseModel):
     nome: str
     idade: int
-    document_id: int
+
 
 
 app = FastAPI()
@@ -23,7 +20,6 @@ BANCO_DE_DADOS = []
 
 @app.post("/Pessoa")
 def add_pessoa(usuario: Usuario):
-    usuario.document_id = valida_id(ids)
     BANCO_DE_DADOS.append(usuario)
     with open('Lista_Pessoas.txt', 'a') as arquivo:
         arquivo.write(str(usuario) + '\n')

@@ -1,2 +1,0 @@
-nome='Gabriel' idade=20 document_id=0
-nome='Lucas' idade=20 document_id=1
