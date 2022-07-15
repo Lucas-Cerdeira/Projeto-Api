@@ -11,7 +11,6 @@ class Usuario(BaseModel):
     idade: int
 
 
-
 app = FastAPI()
 
 
@@ -24,7 +23,6 @@ def add_pessoa(usuario: Usuario):
     with open('Lista_Pessoas.txt', 'a') as arquivo:
         arquivo.write(str(usuario) + '\n')
         return str(usuario)
-
 
 
 
